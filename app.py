@@ -475,6 +475,7 @@ if st.session_state.running and not st.session_state.done:
         st.rerun()
 
     except Exception as e:
+        print("PIPELINE ERROR:", type(e).__name__, str(e))
         st.session_state.running = False
         st.session_state.done = False
 
@@ -542,5 +543,5 @@ st.markdown("""
 <div class="notice">
     ResearchMind · Powered by LangChain multi-agent pipeline · Built with Streamlit
 </div>
-<div class="watermark">Made by Isha</div>
+<div class="watermark">Made by Karan.</div>
 """, unsafe_allow_html=True)
